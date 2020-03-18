@@ -1,9 +1,10 @@
 ---
-title: html and css
-date: 2020-03-18 12:24:16
-tags:
+title: html and CSS
+tags: html,CSS
+notebook: 前端
 ---
-[toc]
+
+
 ## 响应式设计（Responsive design）
 
 > "Responsive design” refers to the idea that your website should display equally well in everything from widescreen monitors to mobile phones.
@@ -238,10 +239,115 @@ form元素一般是用来收集用户信息然后与后端服务进行交互的�
                 </select>
             </div>
 ## CSS
+.form-row select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+```
+* *select*标签用于定义下拉菜单
+* *option*标签定义下拉菜单中每一项内容，*value*属性定义选择该下拉项时的值。
+* *select*标签的样式化是比较困难的，一般推荐使用**Bootstrap Dropdown**和**JQuery Selectmenu**等框架去进行样式化
+
+### textarea
+
+```
+## html
+<div class="form-row">
+    <label for="abstract">Abstract</label>
+    <textarea name="abstract" id="abstract" placeholder="请输入一段话"></textarea>
+    <div class="instructions">Describe textarea</div>
+</div>
+
+##CSS
+.form-row textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  min-height: 200px;
+  margin-bottom: 10px;
+  padding: 7px;
+  resize: none;
+}
+```
+
+* *textarea*标签类似于*text input fields*，只是用来定义多行文本域
+* 不同于*input*这种self-closing标签，textarea为双向标签
+* 默认的浏览器允许用户缩放*textarea*域，通过属性*resize*值为none，则不允许用户就行缩放
+
+### checkboxes
+```
+## html
+<div class="form-row">
+    <label for="available" class="checkbox-label">
+        <input type="checkbox" id="available" name="available" value="is-available">
+        <span>I am actually available the date of talk</span>
+    </label>
+</div>
+## CSS
+@media only screen and (min-width: 700px) {
+  /* ... */
+  .form-row .checkbox-label {
+    margin-left: 120px;
+    width: auto;
+  }
+}
 
 
 ```
+* *input*标签中type值为*checkbox*时定义了多项选择
+* 不同于*radio*,checkbox不需要fieldset标签分组
+* 定义*width*值为*auto*后，可以使得全部的表单域都在单独的一行
 
+### submit buttons
+
+```
+## html
+<form action='' method='get' class='speaker-form' id="formname">
+  <div class='form-row'>
+    <button>Submit</button>
+  </div>
+
+  <div class="form-row">
+      <input type="submit" value="Submit">
+  </div>
+</form>
+
+<div class='form-row'>
+    <button form="formname">Submit</button>
+</div>
+
+## CSS
+
+.form-row input[type="submit"],
+.form-row button {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #FFFFFF;
+  background-color: #5995DA;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.form-row input[type="submit"]:hover,
+.form-row button:hover {
+  background-color: #76AEED;
+}
+```
+* 表单的提交通过标签*button*和type为*submit*的input标签都可以
+* 当button标签位于某个form中时，可以直接提交，否则需要将button的属性form值指为某个form的id
+* type值为*submit*的input标签同上
+* 建议使用button标签进行form提交
+* 点击button时会验证form中的input的所有元素，然后提交表单内容至action的URL
+* 提交form至URL的格式为:
+  > speaker-submission.html?full-name=Rick&email=rick%40internetingishard.com&talk-type=workshop&t-shirt=l&abstract=Derp.&available=is-available
+* 样式化button标签是一般会使用伪类如hover和active
 
 
 
