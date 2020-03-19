@@ -1,5 +1,7 @@
 ---
 title: kubeadm源码分析
+date: 2018-01-15
+updated: 2018-01-15
 tags:
     - kubernetes
 ---

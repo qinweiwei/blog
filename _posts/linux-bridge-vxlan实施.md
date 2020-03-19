@@ -1,5 +1,7 @@
 ---
 title: 基于linux bridge的vxlan测试
+date: 2017-12-16
+updated: 2017-12-16
 tags:
     - vxlan
 ---

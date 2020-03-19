@@ -1,5 +1,7 @@
 ---
 title: GO语言学习---package
+date: 2017-12-16
+updated: 2017-12-16
 tags:
     - golang
 ---
