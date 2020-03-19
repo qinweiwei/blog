@@ -349,6 +349,72 @@ form元素一般是用来收集用户信息然后与后端服务进行交互的�
   > speaker-submission.html?full-name=Rick&email=rick%40internetingishard.com&talk-type=workshop&t-shirt=l&abstract=Derp.&available=is-available
 * 样式化button标签是一般会使用伪类如hover和active
 
+### web typography
+
+#### web font
+
+* 常用的4种web font文件： *.svg*  *.eot* *.ttf*  *.woff*
+* 现在一般都是用woff格式web font文件
+* 下载web font的地址：[Font Squirrel](https://www.fontsquirrel.com/)、[Google Fonts](https://fonts.google.com/)、[Fontspring](https://www.fontspring.com/)
+* 本地web font文件的使方法如下
+
+```
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Light-webfont.woff') format('woff');
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.8em;
+  color: #5D6063;
+}
+
+```
+* 使用外部web font文件使用方法如下：
+
+```
+<head>
+  /* .... */
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Droid+Sans+Mono|Lato|Libre+Baskerville|Lobster|Questrial|Rokkitt|Rufina|Sorts+Mill+Goudy|UnifrakturMaguntia" rel="stylesheet">
+  <style>
+    .blackletter {
+      font-family: 'UnifrakturMaguntia', cursive;
+    }
+  </style>
+```
+
+#### 段落缩进
+* 两种方案：
+  1. 段落首行缩进
+  2. 段落间设置margin-bottom
+![段落缩进](https://i.loli.net/2020/03/19/JdcO7snfZRjxuQS.png)
+* 使用CSS属性**text-indent**和**margin-bottom**
+```
+<style>
+  .paragraph-indent p {
+    text-indent: 1em;
+    margin-bottom: 0;
+  }
+  .paragraph-indent p:first-of-type {
+    text-indent: 0;
+  }
+</style>
+
+### 不要使用以下方案
+/* DESIGNERS WILL JUDGE YOU FOR THIS */
+.never-both p {
+  text-indent: 1em;
+  margin-bottom: 1em;
+}
+```
+#### 文本对齐
+
+* 通过**text-align**属性定义对齐方式
+* 支持left，center，right，justify几种方式
+* left是常用的选择方案, center一般用于诗歌，歌词和标题等， right一般用于图片的标识
+
 
 
 
