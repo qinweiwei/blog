@@ -1,9 +1,8 @@
 ---
 title: html and CSS
-tags: html,CSS
+tags: html, CSS
 notebook: 前端
 ---
-
 
 ## 响应式设计（Responsive design）
 
@@ -414,6 +413,20 @@ body {
 * 通过**text-align**属性定义对齐方式
 * 支持left，center，right，justify几种方式
 * left是常用的选择方案, center一般用于诗歌，歌词和标题等， right一般用于图片的标识
+
+### 垂直文本间距
+
+* 使用 **margin-top**，**margin-bottom**, **line-height**属性定义
+* **margin-top**，**margin-bottom**定义了段落之间的间距
+* **line-height**定义了段落中的行间距
+* 基本原则
+  * 保留足够的行间距
+  * 全本采用一致的行间距
+
+### 行长度
+
+* **width**，**margin-left**, **margin-right**属性定义
+* 单独一行的长度不能超过80个字符
 
 
 
