@@ -82,9 +82,9 @@ class LikeButton extends React.Component {
 ## React核心概念
 
 ### JSX
-
-> const element = <h1>Hello, world!</h1>;
-
+```
+ const element = <h1>Hello, world!</h1>;
+```
 JSX是一个JavaScript的扩展，可以很好地描述UI应该呈现出的它应有的交还形式。
 
 * JSX中支持嵌入的表达式
@@ -145,7 +145,7 @@ ReactDOM.render(<Welcome name="Sara" />, document.getElementById('root'))
 ```
 *注意： 组件的命名必须首字母大写，用于与JS变量区分（小驼峰命名）*
 
-* Class类方式
+* Class类组件
 ```
 class Welcome extends React.Component {
     render() {
