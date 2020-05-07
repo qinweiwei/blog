@@ -384,7 +384,12 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
+### 状态提升
 
+当一个组件需要访问另一个组件的state时，按照数据流自上而下的原则，最后的方式是将组件的state提升为父组件的state，然后通过props传递给多个子组件。
 
+### 组合与继承
+
+在React中，
 
 
