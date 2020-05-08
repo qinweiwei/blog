@@ -390,6 +390,59 @@ this.setState(partialState);
 
 ### 组合与继承
 
-在React中，
+> React 有十分强大的组合模式。我们推荐使用组合而非继承来实现组件间的代码重用。
 
+* children prop
+对于包含关系，可以使用children prop，进行子组件的传递。
+```
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  )
+}
 
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        Welcome
+      </h1>
+      <p className="Dialog-message">
+        Thank you
+      </p>
+    </FancyBorder>
+  )
+}
+
+```
+或者不适用children prop，直接传递一个React 元素（其本质就是对象），所以就可以直接传递元素作为prop
+
+```
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <SplitPane
+      left={
+        <Contacts />
+      }
+      right={
+        <Chat />
+      } />
+  );
+}
+
+```
